@@ -63,6 +63,9 @@ importers:
       '@gold-ops/sdk':
         specifier: workspace:*
         version: link:../../packages/sdk
+      '@gold-ops/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^19.0.0
         version: 19.2.4
@@ -91,6 +94,9 @@ importers:
       '@gold-ops/sdk':
         specifier: workspace:*
         version: link:../../packages/sdk
+      '@gold-ops/ui':
+        specifier: workspace:*
+        version: link:../../packages/ui
       react:
         specifier: ^19.0.0
         version: 19.2.4
@@ -119,6 +125,25 @@ importers:
       '@types/node':
         specifier: ^22.13.5
         version: 22.19.15
+      typescript:
+        specifier: ~5.8.3
+        version: 5.8.3
+
+  packages/ui:
+    dependencies:
+      react:
+        specifier: ^19.0.0
+        version: 19.2.4
+      react-dom:
+        specifier: ^19.0.0
+        version: 19.2.4(react@19.2.4)
+    devDependencies:
+      '@types/react':
+        specifier: ^19.0.8
+        version: 19.2.14
+      '@types/react-dom':
+        specifier: ^19.0.3
+        version: 19.2.3(@types/react@19.2.14)
       typescript:
         specifier: ~5.8.3
         version: 5.8.3

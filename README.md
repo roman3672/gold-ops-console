@@ -4,7 +4,7 @@
 
 **Repository:** [github.com/roman3672/gold-ops-console](https://github.com/roman3672/gold-ops-console)
 
-A **monorepo** for a schema-driven internal control plane: a minimal B2B product surface (**Gold Workspace**), an operator console (**Ops**), a shared **HTTP API** (Fastify), and a workspace **SDK** for types and contracts.
+A **monorepo** for a schema-driven internal control plane: a minimal B2B product surface (**Gold Workspace**), an operator console (**Ops**), a shared **HTTP API** (Fastify), a workspace **SDK** for contracts, and a small shared **UI library**.
 
 This repository is a work-in-progress demonstration of multi-tenant SaaS operations tooling (RBAC, audit-first flows, action pipelines—see the design notes linked below).
 
@@ -27,7 +27,7 @@ pnpm dev
 - **Product UI (SaaS):** Vite dev server on port **5173**.
 - **Ops UI:** Vite dev server on port **5174**.
 
-`pnpm dev` runs [Turborepo](https://turbo.build) tasks in parallel. Dependency packages are built first (`^build`), so `@gold-ops/sdk` is compiled to `dist/` before apps that import it start.
+`pnpm dev` runs [Turborepo](https://turbo.build) tasks in parallel. Dependency packages are built first (`^build`), so `@gold-ops/sdk` and `@gold-ops/ui` are compiled to `dist/` before apps that import them start.
 
 ## Root scripts
 
@@ -50,6 +50,7 @@ apps/
   saas/   # @gold-ops/saas — product-facing React app (Gold Workspace)
 packages/
   sdk/    # @gold-ops/sdk  — shared types/helpers, built to dist/
+  ui/     # @gold-ops/ui   — shared React UI primitives
 ```
 
 Turborepo caches task outputs under `.turbo/`; build artifacts live in each package’s `dist/` where applicable.

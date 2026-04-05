@@ -4,7 +4,11 @@ import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import tseslint from 'typescript-eslint';
 
-const reactAppGlobs = ['apps/ops/**/*.{jsx,tsx}', 'apps/saas/**/*.{jsx,tsx}'];
+const reactAppGlobs = [
+  'apps/ops/**/*.{jsx,tsx}',
+  'apps/saas/**/*.{jsx,tsx}',
+  'packages/ui/**/*.{jsx,tsx}',
+];
 
 function scopeReactConfig(config) {
   return {
@@ -43,7 +47,7 @@ export default tseslint.config(
     },
   },
   {
-    files: ['apps/ops/**/*.{ts,tsx}', 'apps/saas/**/*.{ts,tsx}'],
+    files: ['apps/ops/**/*.{ts,tsx}', 'apps/saas/**/*.{ts,tsx}', 'packages/ui/**/*.{ts,tsx}'],
     languageOptions: {
       globals: { ...globals.browser },
     },
